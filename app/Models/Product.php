@@ -23,5 +23,17 @@ class Product extends Model
         'rating',
         'number_sales',
         'offer',
+        'category_id',
+        'brand_id',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Categories::class);
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }

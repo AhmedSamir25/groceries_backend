@@ -18,6 +18,8 @@ class ProductController extends Controller
             'rating' => 'required|integer',
             'number_sales' => 'required|integer',
             'offer' => 'required|boolean',
+            'category_id' => 'required|exists:categories,id',
+            'brand_id' => 'required|exists:brands,id',
         ]);
 
 
@@ -35,7 +37,9 @@ class ProductController extends Controller
             'price' => $request->get('price'),
             'rating' => $request->get('rating'),
             'number_sales' => $request->get('number_sales'),
-            'offer' => $request->get('offer')
+            'offer' => $request->get('offer'),
+            'category_id' => $request->category_id,
+    'brand_id' => $request->brand_id,
         ]);
 
         return response()->json([
@@ -75,6 +79,8 @@ class ProductController extends Controller
             'rating' => 'sometimes|integer',
             'number_sales' => 'sometimes|integer',
             'offer' => 'sometimes|boolean',
+            'category_id' => 'sometimes|exists:categories,id',
+        'brand_id' => 'sometimes|exists:brands,id',
         ]);
 
         if ($validator->fails()) {

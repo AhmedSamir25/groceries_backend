@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer("rating"); 
             $table->integer("number_sales"); 
             $table->boolean("offer")->default(false);
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
             $table->timestamps();
         });
         
