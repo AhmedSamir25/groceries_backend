@@ -22,5 +22,6 @@ class Product extends Model
         'price',
         'rating',
         'number_sales',
+        'offer',
     ];
 }
