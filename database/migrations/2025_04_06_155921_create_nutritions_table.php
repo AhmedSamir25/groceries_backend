@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('nutritions', function (Blueprint $table) {
             $table->id();  
-            $table->decimal('size', 8,2);
+            $table->decimal('size', 8,2); 
             $table->decimal('calories', 8,2);
             $table->decimal('water', 8,2);
             $table->decimal('protein', 8,2);
