@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->text("detail");
+            $table->text("product_image");
             $table->string("weight");
             $table->decimal("price", 10, 2); 
             $table->integer("rating"); 
