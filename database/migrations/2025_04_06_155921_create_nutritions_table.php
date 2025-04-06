@@ -12,13 +12,13 @@ return new class extends Migration
         Schema::create('nutritions', function (Blueprint $table) {
             $table->id();  
             $table->decimal('size', 8,2);
-            $table->decimal('Calories', 8,2);
-            $table->decimal('Water', 8,2);
-            $table->decimal('Protein', 8,2);
-            $table->decimal('Carbohydrates', 8,2);
-            $table->decimal('Sugar', 8,2);
-            $table->decimal('Fiber', 8,2);
-            $table->decimal('Fat', 8,2);
+            $table->decimal('calories', 8,2);
+            $table->decimal('water', 8,2);
+            $table->decimal('protein', 8,2);
+            $table->decimal('carbohydrates', 8,2);
+            $table->decimal('sugar', 8,2);
+            $table->decimal('fiber', 8,2);
+            $table->decimal('fat', 8,2);
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->timestamps();
         });
