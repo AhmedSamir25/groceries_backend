@@ -36,4 +36,9 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
+    public function nutritions()
+    {
+        return $this->hasMany(Nutritions::class);
+    }
 }
