@@ -13,6 +13,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'detail' => 'required|string',
+            'product_image' => 'required|string',
             'weight' => 'required|string|max:255',
             'price' => 'required|numeric',
             'rating' => 'required|integer',
@@ -33,6 +34,7 @@ class ProductController extends Controller
         $Product = Product::create([
             'name' =>  $request->get('name'),
             'detail'  => $request->get('detail'),
+            'product_image' => $request->get('product_image'),
             'weight'  => $request->get('weight'),
             'price' => $request->get('price'),
             'rating' => $request->get('rating'),
@@ -74,6 +76,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|string|max:255',
             'detail' => 'sometimes|string',
+            'product_image' => 'sometimes|string',
             'weight' => 'sometimes|string|max:255',
             'price' => 'sometimes|numeric',
             'rating' => 'sometimes|integer',
